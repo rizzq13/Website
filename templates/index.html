@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+    <h1>Quiz App</h1>
+    <ul>
+        {% for quiz in quizzes %}
+            <h2>{{ quiz[1] }}</h2>
+            <p>{{ quiz[2] }}</p>
+            <a href="/quiz/{{ quiz[0] }}">Take Quiz</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
