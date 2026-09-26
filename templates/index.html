@@ -11,7 +11,10 @@
         {% for quiz in quizzes %}
             <h2>{{ quiz[1] }}</h2>
             <p>{{ quiz[2] }}</p>
-            <a href="/quiz/{{ quiz[0] }}">Take Quiz</a>
+            <form action="/start" method="POST">
+                <input type="hidden" name="quiz_id" value="{{ quiz[0] }}">
+                <button type="submit">Take Quiz</button>
+            </form>
         {% endfor %}
     </ul>
 </body>

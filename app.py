@@ -13,10 +13,11 @@ def index():
 def start():
     quiz_id = int(request.form.get("quiz_id"))
     rows = database.get_questions(quiz_id)
-    questions = [{"q": r[0], "a": r[1], "w": [r[2], r[3], r[4], r[5]]} for r in rows]
+    questions = [{"q": r[0], "a": r[1], "w": [r[2], r[3], r[4]]} for r in rows]
     session["questions"] = questions
     session["nomor"] = 0
     session["skor"] = 0
     return redirect(url_for("test"))
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
