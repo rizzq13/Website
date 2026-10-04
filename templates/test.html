@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Soal {{ nomor }} dari {{ total }} &nbsp;|&nbsp; Skor: {{ skor }}</p>
+
+    <div class="kartu">
+        <h3>{{ pertanyaan }}</h3>
+        <form method="POST">
+            {% for p in pilihan %}
+            <label style="display:block;margin:6px 0;">
+                <input type="radio" name="jawaban" value="{{ p }}" required style="width:auto;"> {{ p }}
+            </label>
+            {% endfor %}
+            <br>
+            <button type="submit">Jawab</button>
+        </form>
+    </div>
+</body>
+</html>
