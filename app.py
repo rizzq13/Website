@@ -41,5 +41,13 @@ def test():
 
     return render_template("test.html", pertanyaan=pertanyaan, pilihan=pilihan, nomor=nomor + 1, total=len(soal), skor=session["skor"])
 
+@app.route ("/result")
+def result():
+    skor = session["skor"]
+    total = len(database.get_questions(session["quiz_id"]))
+    return render_template("result.html", skor=skor, total=total)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)

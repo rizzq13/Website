@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz Selesai!</h1>
+
+    <div class="kartu" style="text-align: center;">
+        <p>{{skor}} / {{total}}</p>
+
+        {% if skor == total %}
+            <p>Sempurna!<p>
+        {% else %}
+            <p>Bagus, terus belajar ya!<p>
+        {% endif %}
+    </div>
+
+    <a href="/">Pilih Quiz Lain</a>
+</body>
+</html>
